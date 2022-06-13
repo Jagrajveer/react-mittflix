@@ -8,6 +8,7 @@ import Header from "./components/Header";
 
 // pages
 import Home from "./pages/Home";
+import Search from "./pages/Search";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/search/:query" element={<Search />} />
         </Routes>
       </Router>
     </>
