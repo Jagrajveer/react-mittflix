@@ -1,11 +1,25 @@
-import React, { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import AltImage from "../images/image-not-available.jpg";
 
 import "./TvShow.css";
 
-const TvShow = ({ tvShow }) => {
+const TvShow = ({ tvShow, toggleWatchlist }) => {
+  const [inWatchList, setInWatchList] = useState(false);
+
+  useEffect(() => {
+    let watchlist = JSON.parse(localStorage.getItem("watchList")) || [];
+    if (watchlist.map((item) => item.id).includes(tvShow.id)) {
+      setInWatchList(true);
+    }
+  }, [tvShow.id]);
+
+  const handleClick = () => {
+    setInWatchList(!inWatchList);
+    toggleWatchlist(tvShow);
+  };
+
   return (
     <div className="tvShow">
       <Link to={`/details/${tvShow.id}`}>
@@ -23,7 +37,11 @@ const TvShow = ({ tvShow }) => {
           <div className="plot">{tvShow.overview}</div>
         </div>
       </Link>
-      <div data-toggled="false" className="listToggle">
+      <div
+        data-toggled={inWatchList}
+        className="listToggle"
+        onClick={handleClick}
+      >
         <div>
           <i className="fa fa-fw fa-plus"></i>
           <i className="fa fa-fw fa-check"></i>

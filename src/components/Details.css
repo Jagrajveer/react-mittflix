@@ -1,0 +1,70 @@
+.show-details-inner {
+  padding: 50px 50px;
+  position: relative;
+  background-color: #0000005c;
+  width: 600px;
+  top: 80px;
+}
+
+.show-details {
+  margin-top: 140px;
+  position: relative;
+}
+
+.show-details .description {
+  font-size: 20px;
+  width: 500px;
+  line-height: 30px;
+  margin: 40px 0;
+}
+
+.show-details .details {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.show-details h1 {
+  font-size: 50px;
+  width: 600px;
+}
+
+.show-details img {
+  position: absolute;
+  width: 100%;
+}
+
+.add-to-watchlist {
+  border: 2px solid var(--red);
+  background-color: var(--red);
+  color: white;
+  font-weight: 400;
+  padding: 10px 15px;
+  font-size: 20px;
+  transition: background 0.125s ease;
+  border-radius: 4px;
+}
+
+.add-to-watchlist:hover {
+  background: none;
+  cursor: pointer;
+}
+
+.remove-to-watchlist {
+  border: 2px solid white;
+  background-color: white;
+  color: var(--red);
+  font-weight: 400;
+  padding: 10px 15px;
+  font-size: 20px;
+  transition: background 0.125s ease;
+  border-radius: 4px;
+}
+
+.remove-to-watchlist:hover {
+  background: none;
+  color: white;
+  cursor: pointer;
+}
